@@ -4,9 +4,9 @@ import Toolbar from "@suid/material/Toolbar";
 import Typography from "@suid/material/Typography";
 import IconButton from "@suid/material/IconButton";
 import Chip from "@suid/material/Chip";
+import { getSavedPokemons } from "../../services/pokemon.service";
 
 export function MainHeader() {
-  const savedPokemons = 0;
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ mb: 2 }}>
@@ -22,7 +22,7 @@ export function MainHeader() {
             Pokemon App
           </Typography>
 
-          <Chip label={savedPokemons} color="warning" />
+          <Chip label={getSavedPokemons().length} color="warning" />
         </Toolbar>
       </AppBar>
     </Box>
